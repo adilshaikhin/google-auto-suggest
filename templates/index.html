@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Suggestions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #keyword-input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #suggestion-container {
+            position: relative;
+        }
+        #suggestions {
+            position: absolute;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-top: none;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 4px 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        #suggestions li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        #suggestions li:hover {
+            background-color: #f0f0f0;
+        }
+        #suggestions li:active {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div id="suggestion-container">
+        <input type="text" id="keyword-input" placeholder="Type to get suggestions...">
+        <ul id="suggestions"></ul>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
